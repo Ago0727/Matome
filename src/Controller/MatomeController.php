@@ -43,6 +43,14 @@
        //ファイルを閉める
        fclose($thread_list);
     }
+    public function thread(){
+      $this->autoRender = false;
+      if(isset($this->request->query['val'])){
+        $page = $this->request->query['val'];
+        var_dump($page);
+        //http://hayabusa.open2ch.net/news4vip/dat/1458061198.dat datファイルで読み込む
+      }
+    }
   }
 
 ?>
