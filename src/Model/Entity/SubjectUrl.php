@@ -7,7 +7,9 @@ use Cake\ORM\Entity;
  * SubjectUrl Entity.
  *
  * @property int $id
+ * @property string $subject_name
  * @property string $subject_url
+ * @property string $dat_data
  */
 class SubjectUrl extends Entity
 {

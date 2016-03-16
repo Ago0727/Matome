@@ -42,8 +42,16 @@ class SubjectUrlTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
+            ->requirePresence('subject_name', 'create')
+            ->notEmpty('subject_name');
+
+        $validator
             ->requirePresence('subject_url', 'create')
             ->notEmpty('subject_url');
+
+        $validator
+            ->requirePresence('dat_data', 'create')
+            ->notEmpty('dat_data');
 
         return $validator;
     }
