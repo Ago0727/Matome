@@ -76,8 +76,6 @@
 
           //各要素をばらす
           preg_match_all('/(.*?)\n/u',$html,$lines);//行ごとになっている各レスを独立
-
-          print '<dl>';
           $i=1;
           foreach($lines[0] as $line){
              preg_match_all('/(.*?)<>/u',$line,$elements);//名前、日時、ID、書き込みを各要素別にバラす
@@ -103,7 +101,6 @@
               $i++;
             }
             $this->set('thread_name',$thread_name);
-          print '</dl>';
 
         }else {
           echo 'datファイルが読み込めません';
