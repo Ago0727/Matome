@@ -83,7 +83,8 @@
               $name_2ch[$i]=str_replace('<>','',$res_2ch[0][0]);//名前
               $mail_2ch[$i]=str_replace('<>','',$res_2ch[0][1]);//メルアド
               $datetime_id_2ch[$i]=str_replace('<>','',$res_2ch[0][2]);//日時
-              $text_2ch[$i]=str_replace(' <>','',$res_2ch[0][3]);//本文
+              $text_2ch[$i] = $res_2ch[0][3];
+              //$text_2ch[$i]=str_replace(' <>','',$res_2ch[0][3]);//本文
               $this->set('res_count',$i);
               $this->set('name_2ch',$name_2ch);
               $this->set('mail_2ch',$mail_2ch);
@@ -92,7 +93,6 @@
               // print '<dt id="'.$i.'">'.$i.'．名前：<span class="name">'.$name_2ch.'</span> '.$mail_2ch.' 投稿日：'.$datetime_id_2ch.'</dt>';
               // print(PHP_EOL);
               // print '<dd>';
-
               $res=preg_replace('/^ */','$1',$text_2ch);//行頭の半角スペースを削除
               $text=preg_replace('/ <br> /','<br />',$res);//半角スペース付き<br>を半角スペースなしの<br />に変換
 
